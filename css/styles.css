@@ -1,0 +1,47 @@
+.container {
+	position: relative;
+}
+
+.search-header {
+	background: #000;
+	padding: 20px 0;
+	margin-bottom: 20px;
+}
+
+#submit-search {
+	position: absolute;
+    right: 10px;
+	top: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.loading {
+	font-size: 20px;
+}
+
+.loading:after {
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+	-webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+	animation: ellipsis steps(4,end) 900ms infinite;
+	content: "\2026"; /* ascii code for the ellipsis character */
+	width: 0px;
+  }
+  
+  @keyframes ellipsis {
+	to {
+	  width: 1em;    
+	}
+  }
+  
+  @-webkit-keyframes ellipsis {
+	to {
+	  width: 1em;    
+	}
+  }
+
+  p, h4 {
+	  margin-bottom: 0;
+  }

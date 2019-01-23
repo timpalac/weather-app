@@ -1,0 +1,15 @@
+<div class="search-results" id="top">
+	<search-field search-value="searchTerm"></search-field>
+	<div class="container">
+		<div class="row" ng-if="location">
+			<div class="col-sm-12">
+				<p>Weather Forecast for <strong>{{location.name}}</strong></p>
+				<h4>{{location.main.temp}} &deg;</h4>
+				<p>H <strong>{{location.main.temp_max}}&deg;</strong> / L <strong>{{location.main.temp_min}}&deg;</strong></p>
+			</div>
+		</div>
+		<div ng-if="!location">
+			<p class="loading">Loading weather data</p>
+		</div>
+	</div>
+</div>
