@@ -3,9 +3,20 @@
 	<div class="container">
 		<div class="row" ng-if="location">
 			<div class="col-sm-12">
-				<p>Weather Forecast for <strong>{{location.name}}</strong></p>
-				<h4>{{location.main.temp}} &deg;</h4>
-				<p>H <strong>{{location.main.temp_max}}&deg;</strong> / L <strong>{{location.main.temp_min}}&deg;</strong></p>
+				<p>Weather Forecast for <strong ng-bind="location.name">{{location.name}}</strong></p>
+				<h4>{{Math.round(location.main.temp)}} &deg;</h4>
+				<p>H <strong>{{Math.round(location.main.temp_max)}}&deg;</strong> / L <strong>{{Math.round(location.main.temp_min)}}&deg;</strong></p>
+
+				<div class="mt-3 forecast-grid" ng-if="location.forecast && location.forecast.length > 0">
+					<p>5 day forecast</p>
+					<div class="row mt-2">
+						<div ng-repeat="forecast in location.forecast" class="forecast-item col-md pt-3 pb-3 ml-2 mr-2">
+							<p class="small mb-2 text-info">{{forecast.dt_txt.slice(0,10) | date:"MM/dd"}}</p>
+							<h4>{{Math.round(forecast.main.temp)}} &deg;</h4>
+							<p>H <strong>{{Math.round(forecast.main.temp_max)}}&deg;</strong> / L <strong>{{Math.round(forecast.main.temp_min)}}&deg;</strong></p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div ng-if="!location">

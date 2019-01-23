@@ -44,4 +44,16 @@
 
   p, h4 {
 	  margin-bottom: 0;
-  }
+	}
+	
+	.forecast-item {
+		background: #eee;
+		border-bottom: 1px solid #ccc;
+	}
+
+	@media(min-width:768px) {
+		.forecast-item {
+			text-align: center;
+			border: none;
+		}
+	}
